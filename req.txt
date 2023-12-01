@@ -9,3 +9,5 @@ django-filter
 celery
 redis
 gunicorn
+django-cors-headers
+
