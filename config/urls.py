@@ -14,13 +14,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-from rest_framework.routers import SimpleRouter
+
 from apps.menu.views import ProductViewSet
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
+
+from rest_framework.routers import SimpleRouter
+from django.contrib import admin
+from django.urls import path, include
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+
+
+from django.conf import settings
 
 router = SimpleRouter()
 router.register('menu', ProductViewSet)
@@ -33,10 +40,8 @@ schema_view = get_schema_view(
     ),
     public=True,
 )
-
-
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('docs/', schema_view.with_ui('swagger')),
+    path('admin/', admin.site.urls),
 
 ]
