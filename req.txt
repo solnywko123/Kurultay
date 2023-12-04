@@ -10,4 +10,4 @@ celery
 redis
 gunicorn
 django-cors-headers
-
+telebot

@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django_filters',
     'drf_yasg',
+    #
+
     'corsheaders',
     'apps.menu',
-    'apps.category'
+    'apps.category',
+    'apps.tg',
 ]
 
 MIDDLEWARE = [
@@ -145,5 +148,6 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-
+TOKEN = config('TOKEN')
+PROXY_URL = 'https://web.telegram.org/a/#6578753281'
 

@@ -12,6 +12,7 @@ class Menu(models.Model):
     category = models.ForeignKey(Category, related_name='menu', on_delete=models.RESTRICT)
     image = models.ImageField(upload_to='products')
     favorite_users = models.ManyToManyField(User, related_name='favorite_products')
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
